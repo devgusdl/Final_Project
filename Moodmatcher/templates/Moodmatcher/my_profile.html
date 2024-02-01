@@ -46,6 +46,20 @@
                                 {% endfor %}
                             </ul>
                         </div>
+
+                        <div class="mt-4">
+                            <h4>좋아요한 게시물</h4>
+                            <p>총 {{ liked_posts.count }}개</p>
+                            {% if liked_posts %}
+                                <ul class="list-group">
+                                    {% for liked_post in liked_posts %}
+                                        <li class="list-group-item">
+                                            &bull; <a href="{% url 'post_detail' category=liked_post.category post_id=liked_post.id %}">{{ liked_post.title }}</a>
+                                        </li>
+                                    {% endfor %}
+                                </ul>
+                            {% endif %}
+                        </div>                                  
                     </div>
                 </div>
             </div>

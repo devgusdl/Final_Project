@@ -14,15 +14,14 @@ class Post(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
     modified_at = models.DateTimeField(auto_now=True)
     views = models.PositiveIntegerField(default=0)
-    likes = models.ManyToManyField(User, related_name='post_likes', blank=True)
-
     category = models.CharField(max_length=20, default='community')  # 또는 'customer-service'로 설정
-    
+    likes = models.ManyToManyField(User, through='PostLike', related_name='post_likes', blank=True)
+
     def save(self, *args, **kwargs):
-        self.modified_at = timezone.now() 
+        self.modified_at = timezone.now()
         return super().save(*args, **kwargs)
-    
-    
+
+
 class Comment(models.Model):
     post = models.ForeignKey(Post, related_name='comments', on_delete=models.CASCADE)
     content = models.TextField()
@@ -31,14 +30,12 @@ class Comment(models.Model):
     updated_at = models.DateTimeField(auto_now=True)
 
 
-
 class UploadedImage(models.Model):
     image = models.ImageField(upload_to='uploaded_images/')
-    # 다른 필요한 필드들을 추가 가능
 
     def __str__(self):
         return f"Image {self.pk}"
-    
+
 
 def default_profile_picture():
     default_image_path = finders.find('images/default_profile.png')
@@ -50,13 +47,13 @@ def default_profile_picture():
 
     return default_image_path
 
+
 class Profile(models.Model):
     user = models.OneToOneField(User, on_delete=models.CASCADE)
     profile_picture = models.ImageField(upload_to='profile_pics/', default=default_profile_picture)
 
     def __str__(self):
         return self.user.username
-    
 
 
 class PostLike(models.Model):

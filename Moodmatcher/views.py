@@ -183,8 +183,17 @@ def comment_delete(request, comment_id):
 def my_profile(request):
     # 현재 로그인한 사용자의 댓글과 게시글을 가져오기
     user = request.user
-    comments = Comment.objects.filter(author=user)  # 수정된 부분
+    comments = Comment.objects.filter(author=user)
     posts = Post.objects.filter(author=user)
+
+    # 현재 사용자가 좋아요를 누른 게시물을 가져오기
+    liked_posts = request.user.post_likes.all()
+
+    # 모든 게시물 가져오기
+    all_posts = Post.objects.all()
+
+    # 좋아요한 게시물 객체 가져오기
+    liked_post_objects = Post.objects.filter(id__in=liked_posts)
 
     # 사용자 프로필 가져오기
     try:
@@ -197,12 +206,14 @@ def my_profile(request):
         'profile': profile,
         'comments': comments,
         'posts': posts,
+        'liked_posts': liked_post_objects,  # 여기에 좋아요한 게시물 포함
     }
 
     return render(request, 'Moodmatcher/my_profile.html', context)
 
 
 
+@login_required
 def post_like(request, post_id):
     post = get_object_or_404(Post, id=post_id)
 
@@ -212,5 +223,11 @@ def post_like(request, post_id):
     else:
         post.likes.add(request.user)
 
+    # 현재 사용자가 좋아요를 누른 게시물을 가져오기
+    liked_posts = request.user.post_likes.all()
+
+    # 모든 게시물 가져오기
+    all_posts = Post.objects.all()
+
     # 사용자에게 반환할 데이터
-    return render(request, 'Moodmatcher/post_detail.html', {'post': post, 'category': post.category})
+    return render(request, 'Moodmatcher/post_detail.html', {'post': post, 'category': post.category, 'liked_posts': liked_posts, 'all_posts': all_posts})
