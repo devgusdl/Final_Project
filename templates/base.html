@@ -93,5 +93,15 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.9/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // 자동 슬라이드
+            $('.carousel').carousel({
+                interval: 3000, // 이미지 변경 간격 (3초)
+                pause: false // 마우스 호버 시에도 슬라이드 멈추지 않음
+            });
+        });
+    </script>
 </body>
 </html>
