@@ -28,36 +28,43 @@
                 <img src="{% static 'images/main_image6.jpg' %}" class="d-block w-100" alt="메인 이미지 6">
             </div>            
         </div>
-    </div>
 
-    <!-- 캐러셀 위에 고정된 텍스트와 버튼 추가 -->
-    <div class="fixed-text">
-        <p class="text">Your Mood Your Journey</p>
-        <a href="{% url 'image_choice_recommend' %}" class="btn btn-dark">Start Journey</a>
+        <!-- 캐러셀 위에 고정된 텍스트와 버튼 추가 -->
+        <div class="fixed-text">
+            <p class="text">Your Mood Your Journey</p>
+            <a href="{% url 'image_choice_recommend' %}" class="btn btn-dark">Start Journey</a>
+        </div>
     </div>
 
     <style>
+        #carouselExampleDark {
+            position: relative;
+        }
+
         #carouselExampleDark img {
             width: 100%;
-            height: auto;
-            object-fit: cover;
+            height: 100%;
+            object-fit: contain;
         }
+
         /* 고정 텍스트와 버튼 스타일 */
         .fixed-text {
             position: absolute;
-            top: 50%; /* 원하는 위치로 수정 가능 */
-            left: 50%; /* 원하는 위치로 수정 가능 */
+            top: 50%;
+            left: 50%;
             transform: translate(-50%, -50%);
-            text-align: center; /* 중앙 정렬 */
+            text-align: center;
         }
+
         .fixed-text .text {
-            color: white; /* 텍스트 색상 */
-            font-size: 5em; /* 텍스트 크기 */
-            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5); /* 텍스트 그림자 추가 */
+            color: white;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+            margin-bottom: 20px;
+            font-size: 3em; /* 기본 글자 크기 설정 */
         }
+
         .fixed-text .btn {
-            font-size: 1.5em; /* 버튼 크기 */
-            margin-top: 20px; /* 버튼 위치 조절 */
+            font-size: 1.5em; /* 기본 버튼 크기 설정 */
         }
     </style>
 
@@ -67,8 +74,17 @@
     <script>
         // 자동 슬라이드
         $('.carousel').carousel({
-            interval: 2000, // 이미지 변경 간격 (3초)
-            pause: false // 마우스 호버 시에도 슬라이드 멈추지 않음
+            interval: 2000,
+            pause: false
+        });
+
+        // 페이지 로딩이 완료되면 실행
+        $(document).ready(function() {
+            // 이미지의 높이를 가져옴
+            var imageHeight = $('.carousel-item.active img').height();
+            // 이미지 높이에 따라 글자 크기 조절
+            $('.fixed-text .text').css('font-size', imageHeight * 0.4 + 'px'); // 이미지 높이의 2%로 설정
+            $('.fixed-text .btn').css('font-size', imageHeight * 0.3 + 'px'); // 이미지 높이의 1.5%로 설정
         });
     </script>
 {% endblock %}
