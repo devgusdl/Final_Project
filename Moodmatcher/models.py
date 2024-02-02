@@ -15,8 +15,10 @@ class Post(models.Model):
     modified_at = models.DateTimeField(auto_now=True)
     views = models.PositiveIntegerField(default=0)
     category = models.CharField(max_length=20, default='community')  # 또는 'customer-service'로 설정
-    likes = models.ManyToManyField(User, through='PostLike', related_name='post_likes', blank=True)
+    likes = models.ManyToManyField(User, related_name='liked_posts')  # 여기서 related_name을 업데이트하세요
+    new_likes = models.IntegerField(default=0)
 
+    
     def save(self, *args, **kwargs):
         self.modified_at = timezone.now()
         return super().save(*args, **kwargs)

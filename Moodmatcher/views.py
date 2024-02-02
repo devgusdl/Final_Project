@@ -187,7 +187,7 @@ def my_profile(request):
     posts = Post.objects.filter(author=user)
 
     # 현재 사용자가 좋아요를 누른 게시물을 가져오기
-    liked_posts = request.user.post_likes.all()
+    liked_posts = request.user.liked_posts.all()
 
     # 모든 게시물 가져오기
     all_posts = Post.objects.all()
@@ -223,8 +223,12 @@ def post_like(request, post_id):
     else:
         post.likes.add(request.user)
 
+    # new_likes 필드 갱신
+    post.new_likes = post.likes.count()
+    post.save()
+
     # 현재 사용자가 좋아요를 누른 게시물을 가져오기
-    liked_posts = request.user.post_likes.all()
+    liked_posts = Post.objects.filter(id__in=request.user.postlike_set.values_list('post_id', flat=True))
 
     # 모든 게시물 가져오기
     all_posts = Post.objects.all()
