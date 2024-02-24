@@ -31,15 +31,6 @@
 5. aws 환경 셋팅 및 데이터 파이프라인 구축
 6. 최종적으로 개발한 관광지 추천 서비스를 Django 웹 서비스로 구
 현
-<img src="data/data1.JPG" alt="Alt text"/>
-<img src="data/data2.JPG" alt="Alt text"/>
-<img src="data/model_1.JPG" alt="Alt text"/>
-<img src="data/model_2.JPG" alt="Alt text"/>
-<img src="data/model_3.JPG" alt="Alt text"/>
-<img src="data/keyword.JPG" alt="Alt text"/>
-<img src="data/ERD.JPG" alt="Alt text"/>
-<img src="data/process.JPG" alt="Alt text"/>
-<img src="data/userflow.JPG" alt="Alt text"/>
 
 # ⭐️ Key Function
 
