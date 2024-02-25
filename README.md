@@ -52,15 +52,15 @@
 
 # ⚙️ Architecture
 
-<img src="data/data1.JPG" alt="Alt text"/>
-<img src="data/data2.JPG" alt="Alt text"/>
-<img src="data/model_1.JPG" alt="Alt text"/>
-<img src="data/model_2.JPG" alt="Alt text"/>
-<img src="data/model_3.JPG" alt="Alt text"/>
-<img src="data/keyword.JPG" alt="Alt text"/>
-<img src="data/ERD.JPG" alt="Alt text"/>
-<img src="data/process.JPG" alt="Alt text"/>
-<img src="data/userflow.JPG" alt="Alt text"/>
+<img src="Images/data1.JPG" alt="Alt text"/>
+<img src="Images/data2.JPG" alt="Alt text"/>
+<img src="Images/model_1.JPG" alt="Alt text"/>
+<img src="Images/model_2.JPG" alt="Alt text"/>
+<img src="Images/model_3.JPG" alt="Alt text"/>
+<img src="Images/keyword.JPG" alt="Alt text"/>
+<img src="Images/ERD.JPG" alt="Alt text"/>
+<img src="Images/process.JPG" alt="Alt text"/>
+<img src="Images/userflow.JPG" alt="Alt text"/>
 
 
 # 📷 Screenshot
@@ -136,23 +136,23 @@
 ```
 
 
-<img src="data/image_1.JPG" alt="Alt text"/>
-<img src="data/image_2.JPG" alt="Alt text"/>
-<img src="data/image_17.JPG" alt="Alt text"/>
-<img src="data/image_3.JPG" alt="Alt text"/>
-<img src="data/image_4.JPG" alt="Alt text"/>
-<img src="data/image_16.JPG" alt="Alt text"/>
-<img src="data/image_5.JPG" alt="Alt text"/>
-<img src="data/image_6.JPG" alt="Alt text"/>
-<img src="data/image_7.JPG" alt="Alt text"/>
-<img src="data/image_8.JPG" alt="Alt text"/>
-<img src="data/image_9.JPG" alt="Alt text"/>
-<img src="data/image_11.JPG" alt="Alt text"/>
-<img src="data/image_10.JPG" alt="Alt text"/>
-<img src="data/image_12.JPG" alt="Alt text"/>
-<img src="data/image_13.JPG" alt="Alt text"/>
-<img src="data/image_14.JPG" alt="Alt text"/>
-<img src="data/image_15.JPG" alt="Alt text"/>
+<img src="Images/image_1.JPG" alt="Alt text"/>
+<img src="Images/image_2.JPG" alt="Alt text"/>
+<img src="Images/image_17.JPG" alt="Alt text"/>
+<img src="Images/image_3.JPG" alt="Alt text"/>
+<img src="Images/image_4.JPG" alt="Alt text"/>
+<img src="Images/image_16.JPG" alt="Alt text"/>
+<img src="Images/image_5.JPG" alt="Alt text"/>
+<img src="Images/image_6.JPG" alt="Alt text"/>
+<img src="Images/image_7.JPG" alt="Alt text"/>
+<img src="Images/image_8.JPG" alt="Alt text"/>
+<img src="Images/image_9.JPG" alt="Alt text"/>
+<img src="Images/image_11.JPG" alt="Alt text"/>
+<img src="Images/image_10.JPG" alt="Alt text"/>
+<img src="Images/image_12.JPG" alt="Alt text"/>
+<img src="Images/image_13.JPG" alt="Alt text"/>
+<img src="Images/image_14.JPG" alt="Alt text"/>
+<img src="Images/image_15.JPG" alt="Alt text"/>
 
 
 
