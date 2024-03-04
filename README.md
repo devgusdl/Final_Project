@@ -7,7 +7,7 @@
 # 📝 Summary
 
 <p align="center">
-  <img src="data/video.gif" width="500" height="350">
+  <img src="Images/video.gif" width="500" height="350">
 </p>
 
 
